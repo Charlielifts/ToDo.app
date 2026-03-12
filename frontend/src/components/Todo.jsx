@@ -11,7 +11,7 @@ const Todo = () => {
 
   const fetchTodos = async () => {
     try {
-      const res = await axios.get("https://todo-app-xh5q.onrender.com/todos")
+      const res = await axios.get("https://todo-app-tbjl.onrender.com/todos")
       setTodos(res.data)
     } catch (err) {
       console.error(err)
@@ -21,7 +21,7 @@ const Todo = () => {
   const addTodo = async () => {
     if (input.trim()) {
       try {
-        const res = await axios.post("https://todo-app-xh5q.onrender.com/todos", {
+        const res = await axios.post("https://todo-app-tbjl.onrender.com/todos", {
           text: input
         })
         setTodos([res.data, ...todos])
@@ -69,7 +69,7 @@ const Todo = () => {
                         <input type="checkbox"
                         checked={todo.completed}
                         onChange={async () => {
-                          await axios.put(`https://todo-app-xh5q.onrender.com/todos/${todo["number of list"]}`, {
+                          await axios.put(`https://todo-app-tbjl.onrender.com/todos/${todo["number of list"]}`, {
                             completed: !todo.completed
                           })
                           fetchTodos()
@@ -82,7 +82,7 @@ const Todo = () => {
                             {todo["todo list"]}
                         </span>
 
-                        <button onClick={async () => { await axios.delete(`https://todo-app-xh5q.onrender.com/todos/${todo["number of list"]}`) 
+                        <button onClick={async () => { await axios.delete(`https://todo-app-tbjl.onrender.com/todos/${todo["number of list"]}`) 
                               fetchTodos()
                               }} className="cursor-pointer">
                              <div className="bg-transparent hover:opacity-75 text-black p-2 rounded-full transition-opacity duration-200">
