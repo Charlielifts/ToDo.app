@@ -62,14 +62,14 @@ const Todo = () => {
             {
                todos.map((todo) => (
                     <li
-                    key={todo["number of list"]}
+                    key={todo["number_of_list"]}
                     className="flex items-center p-1 sm:p-2 md:p-3
                     rounded-full bg-slate-100 border-0 bg-transparent"
                      >
                         <input type="checkbox"
                         checked={todo.completed}
                         onChange={async () => {
-                          await axios.put(`https://todo-app-tbjl.onrender.com/todos/${todo["number of list"]}`, {
+                          await axios.put(`https://todo-app-tbjl.onrender.com/todos/${todo["number_of_list"]}`, {
                             completed: !todo.completed
                           })
                           fetchTodos()
@@ -79,10 +79,10 @@ const Todo = () => {
                         <span
                             className={`flex-grow ${todo.completed ? "line-through text-gray-500" : "text-gray-800"} font-medium`}
                         >
-                            {todo["todo list"]}
+                            {todo["todo_list"]}
                         </span>
 
-                        <button onClick={async () => { await axios.delete(`https://todo-app-tbjl.onrender.com/todos/${todo["number of list"]}`) 
+                        <button onClick={async () => { await axios.delete(`https://todo-app-tbjl.onrender.com/todos/${todo["number_of_list"]}`) 
                               fetchTodos()
                               }} className="cursor-pointer">
                              <div className="bg-transparent hover:opacity-75 text-black p-2 rounded-full transition-opacity duration-200">
